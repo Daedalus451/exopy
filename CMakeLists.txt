@@ -9,17 +9,17 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+include(${PROJECT_SOURCE_DIR}/cmake/ExoMakeAvailable.cmake)
+
 option(EXO_DOWNLOAD_PYBIND11 "Download Pybind11" ON)
 
 if(EXO_DOWNLOAD_PYBIND11)
-  include(FetchContent)
-
   FetchContent_Declare(pybind11
     GIT_REPOSITORY https://github.com/pybind/pybind11.git
     GIT_TAG v2.4.3
   )
 
-  FetchContent_MakeAvailable(pybind11)
+  Exo_MakeAvailable(pybind11 EXCLUDE_FROM_ALL)
 else()
   find_package(pybind11 REQUIRED)
 endif()
@@ -27,14 +27,12 @@ endif()
 option(EXO_DOWNLOAD_SPAN_LITE "Download span-lite" ON)
 
 if(EXO_DOWNLOAD_SPAN_LITE)
-  include(FetchContent)
-
   FetchContent_Declare(span-lite
     GIT_REPOSITORY https://github.com/martinmoene/span-lite.git
     GIT_TAG master
   )
 
-  FetchContent_MakeAvailable(span-lite)
+  Exo_MakeAvailable(span-lite EXCLUDE_FROM_ALL)
 else()
   find_package(span-lite REQUIRED)
 endif()
