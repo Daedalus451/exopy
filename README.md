@@ -1,14 +1,21 @@
 # exopy #
 
+[![Language](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B#Standardization)
+[![License](https://img.shields.io/github/license/Daedalus451/exopy)](https://www.mozilla.org/en-US/MPL/2.0/)
+
 **exopy** is a Python module for modeling the growth of planetesimals in a disk over time. It is built as a .pyd from a C++ project using pybind11.
 
-The Smoluchowski coagulation equation, as shown below, is used to compute the number of planetesimals.
+The [Smoluchowski coagulation equation](https://en.wikipedia.org/wiki/Smoluchowski_coagulation_equation), as shown below, is used to compute the number of planetesimals.
 
 ![coagulation_equation.svg](/assets/coagulation_equation.svg "Coagulation Equation")
 
 ## Requirements ##
 
 + C++ 17 compiler
+  + tested on:
+    + msvc 1924 (Windows 10 1909)
+    + gcc 8.3.0 (Ubuntu 18.04.4)
+    + clang 9.0.0 (Ubuntu 18.04.4)
 + [CMake 3.14](https://cmake.org/) or newer
 + [pybind11](https://github.com/pybind/pybind11)
 + [span-lite](https://github.com/martinmoene/span-lite)
