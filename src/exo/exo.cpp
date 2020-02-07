@@ -69,8 +69,6 @@ double dnk_dt(nonstd::span<const double> data, cache_map& cache, exo::matrix_spa
     generate_pairs(cache, k);
   }
 
-  size_t k_max = A.rows();
-
   double increase = 0.0;
 
   const auto& pairs = cache[k];
