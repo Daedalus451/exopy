@@ -13,10 +13,10 @@ The [Smoluchowski coagulation equation](https://en.wikipedia.org/wiki/Smoluchows
 
 + C++ 17 compiler
   + tested on:
-    + msvc 1924 (Windows 10 1909)
-    + gcc 8.3.0 (Ubuntu 18.04.4)
-    + clang 9.0.0 (Ubuntu 18.04.4)
-+ [CMake 3.14](https://cmake.org/) or newer
+    + msvc 1916/1924 (Windows 10 1909)
+    + gcc 7.4.0/8.3.0 (Ubuntu 18.04.4)
+    + clang 6.0.0/9.0.0 (Ubuntu 18.04.4)
++ [CMake 3.11](https://cmake.org/) or newer
 + [pybind11](https://github.com/pybind/pybind11)
 + [span-lite](https://github.com/martinmoene/span-lite)
 + [Python 3](https://www.python.org/)

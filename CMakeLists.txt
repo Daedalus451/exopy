@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.11)
 
 project(exo LANGUAGES CXX VERSION 0.1.0)
 
@@ -79,7 +79,7 @@ target_link_libraries(exopy
 # this is problem is fixed in a later pybind11 commit but there is no official release yet
 # referenced in issue https://github.com/pybind/pybind11/issues/1604
 # fixed in commit 759221f5c56939f59d8f342a41f8e2d2cacbc8cf
-if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "AppleClang")
+if (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "AppleClang")
   target_compile_options(exopy PUBLIC -fsized-deallocation)
 endif()
 
