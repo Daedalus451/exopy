@@ -19,9 +19,9 @@ namespace py = pybind11;
 using py_arrayd = py::array_t<double, py::array::c_style | py::array::forcecast>;
 
 template <typename Container, typename = std::enable_if_t<std::is_rvalue_reference_v<Container&&>>>
-py::array_t<typename Container::value_type> py_array_move(Container&& seq, const py::array::ShapeContainer& shape)
+py::array_t<typename Container::value_type> py_array_move(Container&& data, const py::array::ShapeContainer& shape)
 {
-  Container* ptr = new Container(std::move(seq));
+  Container* ptr = new Container(std::move(data));
   auto capsule = py::capsule(ptr, [](void* p) { delete reinterpret_cast<Container*>(p); });
   return std::move(py::array(shape, ptr->data(), capsule));
 }
