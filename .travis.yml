@@ -1,0 +1,40 @@
+os: linux
+dist: xenial
+language: cpp
+
+env:
+  - BUILD_TYPE=Debug
+  - GENERATOR="Unix Makefiles"
+  - JOBS=2
+
+matrix:
+  include:
+    - compiler: gcc
+      env:
+        - COMPILER=g++
+      addons:
+        apt:
+          update: true
+          packages:
+            - g++-7
+          sources:
+            - ubuntu-toolchain-r-test
+    - compiler: clang
+      env:
+        - COMPILER=clang++
+      addons:
+        apt:
+          update: true
+          packages:
+            - clang-6
+          sources:
+            - ubuntu-toolchain-r-test
+            - sourceline: 'ppa:llvm-toolchain-xenial-6.0'
+
+script:
+  - export CXX=${COMPILER}
+  - ${CXX} --version
+  - cmake --version
+  - mkdir build && cd build
+  - cmake -G $GENERATOR -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
+  - cmake --build . -- -j${JOBS}
