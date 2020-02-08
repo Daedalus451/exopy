@@ -12,7 +12,7 @@ matrix:
   include:
     - compiler: gcc
       env:
-        - COMPILER=g++
+        - COMPILER=g++-7
       addons:
         apt:
           update: true
@@ -22,7 +22,7 @@ matrix:
             - ubuntu-toolchain-r-test
     - compiler: clang
       env:
-        - COMPILER=clang++
+        - COMPILER=clang++-6
       addons:
         apt:
           update: true
@@ -30,7 +30,8 @@ matrix:
             - clang-6
           sources:
             - ubuntu-toolchain-r-test
-            - sourceline: 'ppa:llvm-toolchain-xenial-6.0'
+            - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-6 main'
+              key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
 
 script:
   - export CXX=${COMPILER}
