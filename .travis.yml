@@ -3,9 +3,10 @@ dist: xenial
 language: cpp
 
 env:
-  - BUILD_TYPE=Debug
-  - GENERATOR="Unix Makefiles"
-  - JOBS=2
+  global:
+    - BUILD_TYPE=Debug
+    - GENERATOR="Unix Makefiles"
+    - JOBS=2
 
 matrix:
   include:
