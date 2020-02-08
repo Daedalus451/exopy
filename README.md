@@ -2,6 +2,7 @@
 
 [![Language](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B#Standardization)
 [![License](https://img.shields.io/github/license/Daedalus451/exopy)](https://www.mozilla.org/en-US/MPL/2.0/)
+[![CI](https://img.shields.io/travis/com/Daedalus451/exopy)](https://travis-ci.org/Daedalus451/exopy)
 
 **exopy** is a Python module for modeling the growth of planetesimals in a disk over time. It is built as a .pyd from a C++ project using pybind11.
 
