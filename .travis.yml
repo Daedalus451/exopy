@@ -28,6 +28,7 @@ matrix:
           update: true
           packages:
             - clang-6.0
+            - g++-7
           sources:
             - ubuntu-toolchain-r-test
             - sourceline: 'deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial-6 main'
@@ -37,7 +38,7 @@ script:
   - export CXX=${COMPILER}
   - ${CXX} --version
   - cmake --version
-  - python --version
+  - python3 --version
   - pyenv global 3.7.1
   - mkdir build && cd build
   - cmake -G "${GENERATOR}" -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
