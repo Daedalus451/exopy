@@ -36,5 +36,5 @@ script:
   - ${CXX} --version
   - cmake --version
   - mkdir build && cd build
-  - cmake -G $GENERATOR -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
+  - cmake -G "$GENERATOR" -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
   - cmake --build . -- -j${JOBS}
