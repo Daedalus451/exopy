@@ -37,8 +37,8 @@ script:
   - export CXX=${COMPILER}
   - ${CXX} --version
   - cmake --version
-  - echo ${TRAVIS_PYTHON_VERSION}
-  - pyenv global ${TRAVIS_PYTHON_VERSION}
+  - python --version
+  - pyenv global 3.7.1
   - mkdir build && cd build
   - cmake -G "${GENERATOR}" -DCMAKE_BUILD_TYPE=$BUILD_TYPE ..
   - cmake --build . -- -j${JOBS}
