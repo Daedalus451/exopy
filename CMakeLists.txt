@@ -29,7 +29,7 @@ option(EXO_DOWNLOAD_SPAN_LITE "Download span-lite" ON)
 if(EXO_DOWNLOAD_SPAN_LITE)
   FetchContent_Declare(span-lite
     GIT_REPOSITORY https://github.com/martinmoene/span-lite.git
-    GIT_TAG master
+    GIT_TAG e03d1166ccc8481d993dc02aae703966301a5e6e
   )
 
   Exo_MakeAvailable(span-lite EXCLUDE_FROM_ALL)

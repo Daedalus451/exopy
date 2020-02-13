@@ -1,14 +1,17 @@
 # exopy #
 
-[![Language](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B#Standardization)
+[![Language](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B17)
 [![License](https://img.shields.io/github/license/Daedalus451/exopy)](https://www.mozilla.org/en-US/MPL/2.0/)
-[![CI](https://img.shields.io/travis/com/Daedalus451/exopy)](https://travis-ci.org/Daedalus451/exopy)
+[![Build](https://img.shields.io/travis/com/Daedalus451/exopy)](https://travis-ci.org/Daedalus451/exopy)
+[![Version](https://img.shields.io/github/v/release/Daedalus451/exopy)](https://github.com/Daedalus451/exopy/releases)
+[![Python](https://img.shields.io/pypi/pyversions/exo-py)](https://pypi.org/project/exo-py/)
+[![Pypi](https://img.shields.io/pypi/v/exo-py)](https://pypi.org/project/exo-py/)
 
 **exopy** is a Python module for modeling the growth of planetesimals in a disk over time. It is built as a .pyd from a C++ project using pybind11.
 
 The [Smoluchowski coagulation equation](https://en.wikipedia.org/wiki/Smoluchowski_coagulation_equation), as shown below, is used to compute the number of planetesimals.
 
-![coagulation_equation.svg](/assets/coagulation_equation.svg "Coagulation Equation")
+![coagulation_equation.svg](https://latex.codecogs.com/svg.latex?%5Cfrac%7Bdn_%7Bk%7D%7D%7Bdt%7D%20%3D%20%5Cfrac%7B1%7D%7B2%7D%20%5Csum_%7Bi%20&plus;%20j%20%3D%20k%7D%20A_%7Bij%7D%20n_%7Bi%7D%20n_%7Bj%7D%20-%20n_%7Bk%7D%20%5Csum_%7Bi%20%3D%201%7D%5E%7B%5Cinfty%7D%20A_%7Bik%7D%20n_%7Bi%7D "Coagulation Equation")
 
 ## Requirements ##
 
