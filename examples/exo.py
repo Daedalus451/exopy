@@ -7,7 +7,7 @@ def nk_analytic(t, k: int, A: float, initial: float) -> float:
   nk = initial * f**2 * (1 - f)**(k - 1)
   return nk
 
-t = np.logspace(start=np.log10(0.0001), stop=np.log10(100.0), num=1000)
+t = np.geomspace(start=0.0001, stop=100.0, num=1000)
 nk = exopy.compute_nk_approx(steps=t, k_max=200, initial=200.0, A=0.001)
 
 n_1 = nk[:, 1 - 1]
